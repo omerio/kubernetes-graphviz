@@ -14,6 +14,7 @@ spec:
   # selector:
   #  app: graphviz
   #  tier: frontend
+  # Pod Template
   template:
     metadata:
       labels:
@@ -27,12 +28,21 @@ spec:
         # my own private Container Registry image
         image: gcr.io/gdg-apps-1090/graphviz-webapp
         resources:
+          # The resources specification for each Pod, more details here:
+          # http://kubernetes.io/v1.1/docs/design/resources.html#resource-specifications
           requests:
             cpu: 100m
             memory: 100Mi
         env:
+          # Environment variables that will be available in the Pod
         - name: GET_HOSTS_FROM
           value: dns
+          # If your cluster config does not include a dns service, then to
+          # delete these values. The Pod will fallback on a hardcoded IP address
         ports:
+          # More details on the container ports here,
+          # http://kubernetes.io/v1.1/docs/api-reference/v1/definitions.html#_v1_containerport
+          # The port exposed by the container
         - containerPort: 8080
+          # The port exposed on the host
           hostPort: 8080

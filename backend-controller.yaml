@@ -9,6 +9,7 @@ metadata:
     tier: backend
 spec:
   replicas: 2
+  # Pod Template
   template:
     metadata:
       labels:
@@ -21,11 +22,17 @@ spec:
         #image: omerio/graphviz-server
         # my own private Container Registry image
         image: gcr.io/gdg-apps-1090/graphviz-server
-        # Arguments to the image entrypoint
+        # Arguments to the image entrypoint, more details here:
+        # http://kubernetes.io/v1.1/docs/api-reference/v1/definitions.html#_v1_container
         args: ["8080"]
         resources:
+          # The resources specification for each Pod, more details here:
+          # http://kubernetes.io/v1.1/docs/design/resources.html#resource-specifications
           requests:
             cpu: 100m
             memory: 100Mi
         ports:
+          # More details on the container ports here,
+          # http://kubernetes.io/v1.1/docs/api-reference/v1/definitions.html#_v1_containerport
+          # The port exposed by the container
         - containerPort: 8080

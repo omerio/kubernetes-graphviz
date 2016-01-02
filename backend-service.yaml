@@ -7,7 +7,11 @@ metadata:
     tier: backend
 spec:
   ports:
+    # More details on the Service ports here:
+    # http://kubernetes.io/v1.1/docs/api-reference/v1/definitions.html#_v1_serviceport
+    # The port that this service should serve on, more info here:
   - port: 80
+    # The port that should be targeted on the Pods
     targetPort: 8080
   selector:
     app: graphviz
