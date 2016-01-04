@@ -24,9 +24,9 @@ spec:
       containers:
       - name: webapp
         # Uncomment this line to use the public docker hub image
-        # image: omerio/graphviz-webapp
+        image: omerio/graphviz-webapp
         # my own private Container Registry image
-        image: gcr.io/gdg-apps-1090/graphviz-webapp
+        #image: gcr.io/gdg-apps-1090/graphviz-webapp
         resources:
           # The resources specification for each Pod, more details here:
           # http://kubernetes.io/v1.1/docs/design/resources.html#resource-specifications

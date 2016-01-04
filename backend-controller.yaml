@@ -19,9 +19,9 @@ spec:
       containers:
       - name: server
         # Uncomment this line to use the public docker hub image
-        #image: omerio/graphviz-server
+        image: omerio/graphviz-server
         # my own private Container Registry image
-        image: gcr.io/gdg-apps-1090/graphviz-server
+        #image: gcr.io/gdg-apps-1090/graphviz-server
         # Arguments to the image entrypoint, more details here:
         # http://kubernetes.io/v1.1/docs/api-reference/v1/definitions.html#_v1_container
         args: ["8080"]
