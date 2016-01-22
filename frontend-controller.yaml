@@ -45,4 +45,4 @@ spec:
           # The port exposed by the container
         - containerPort: 8080
           # The port exposed on the host
-          hostPort: 8080
+          # hostPort: 8080
